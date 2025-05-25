@@ -6,4 +6,7 @@
 - **JavaScript**
 
 ## Created Popup for User
+- **GreetUser**
+- **Validate username**
+- **added logic for choosing message display**
 

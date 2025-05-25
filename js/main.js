@@ -1,22 +1,27 @@
- 
- // Function to say the user hello
- function helloUser() {
-   const userName = prompt("What is your name?");
+function greetUser() {
+  const name = prompt("Please enter your name:");
 
-   if(!isValidName(userName)) {
-       alert("Please enter a valid name with at least 3 characters.");
-       return;
-   } else {
-       alert(`Hello ${userName.toUpperCase()}, how are you?`);
-   }
+  if (!isValidName(name)){
+    return alert("Please enter a valid name with at least 3 characters.");
+  } else {
+    showGreeting(name)
+  }
+
+ 
 }
+
+// function to show greeting
+function showGreeting(name) {
+    const wantsGreeting = confirm("Would you like to see a greeting?");
+    if (wantsGreeting) {
+        alert(`Hello, ${name.trim()}!`);
+    }
+}
+
 
 // check if the name is valid
 function isValidName(name) {
   return typeof name === 'string' && name.trim().length >= 3;
 }
 
-helloUser() ;
-
-
-
+greetUser();
