@@ -2,7 +2,8 @@ function greetUser() {
   const name = prompt("Please enter your name:");
 
   if (!isValidName(name)){
-    return alert("Please enter a valid name with at least 3 characters.");
+     alert("Please enter a valid name with at least 3 characters.");
+     return
   } else {
     showGreeting(name)
   }
