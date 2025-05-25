@@ -1,3 +1,3 @@
 # hw-5
-- **created simple page create prompt for get username and set alert with username**
+- **Use prompt to ask for the user's name.Use alert to print "Hello, John! How are you?" , where John is what the user entered**
 
