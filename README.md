@@ -1,7 +1,9 @@
-# hw-1
-## Technologies used
+# hw-2
+
+## Technologies Used
 
 - **Vite**
-- **SCSS**
 - **JavaScript**
-- **Swiper.js**
+
+## Created Popup for User
+
