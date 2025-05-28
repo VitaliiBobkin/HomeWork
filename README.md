@@ -1,3 +1,3 @@
-# hw-6
-- **user simulator for a web application**
+# hw-7
+- **mini-user registration in the browser**
 

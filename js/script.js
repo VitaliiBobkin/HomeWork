@@ -1,38 +1,36 @@
-function showUser() {
-    // 1.(string)-user can change it
-    let userName = `Denzel`
+"use strict";
 
-    // 2.(number) use let, it can be changed by user
-    let age = 25;
+    // 1. Ask for user's name (string)
+    let userName = prompt("Enter your name:");
 
-    // 3.  (boolean) true or false, it can be changed
-    let isVerified = true;
+    // 2. Ask for the user's age and convert to number
+    let age = Number(prompt("How old are you?"));
 
-    // 4. (Date or string) - it can be changed, but string is more convenient (ISO)
-    const registrationDate = new Date("2025-12-17T03:24:00");
+    // 3. Ask for confirmation (boolean)
+    const isAgreed = confirm("Do you agree to participate?");
 
-    // 5. (bigInt) - a lot of numbers need more than 32 bit
-    const cardNumber = 12345678123456781234n;
+    // 4. Large number (BigInt)
+    const userId = 12345678777774567890n;
 
-    // 6. (null or string) it can be empty or have a value, and values can be changed
-    let promoCode = null;
+    // 5. Null value
+    let bonusCode = null;
 
-    // 7.(undefined) - it can be empty or have value and initialized later
-    let backupName;
+    // 6. Undefined value
+    let secondName;
 
-    // 8. (number) - bonuses can be more or less, and values can be changed
-    let bonusPoints = 1500;
-
-    console.log(`User Info:
-        1. Name : ${userName}
-        2. Age : ${age}
-        3. Verified : ${isVerified}
-        4. Registration Date : ${registrationDate.toISOString()}
-        5. Card Number : ${cardNumber}
-        6. Promo Code : ${promoCode}
-        7. Backup Name : ${backupName}
-        8. Bonus Points: ${bonusPoints}`
+    // Show results in the alert
+    alert(
+        `User Data Collected:\n\n` +
+        `Name : ${userName}\n` +
+        `Age : ${age}\n` +
+        `Agreed to participate: ${isAgreed}`
     );
-}
 
-showUser();
+    // Show results in the console
+    console.log(`User Data and Types:
+    1. userName = ${userName} (${typeof userName})
+    2. age = ${age} (${typeof age})
+    3. isAgreed = ${isAgreed} (${typeof isAgreed})
+    4. userId = ${userId} (${typeof userId})
+    5. bonusCode = ${bonusCode} (${typeof bonusCode})
+    6. secondName = ${secondName} (${typeof secondName})`);
