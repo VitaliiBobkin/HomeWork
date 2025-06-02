@@ -1,3 +1,8 @@
-# hw-10
-- **Create a structure with an object and an array that describes the user and their friends.**
+# hw-11
+- **Created program that:**
+
+    **Accepts user input via prompt and confirm**
+    **Creates a session object containing all collected information**
+    **Has a nested object and an array**
+    **Uses all data types**
 
