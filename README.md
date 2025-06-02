@@ -1,3 +1,3 @@
 # hw-7
-- **mini-user registration in the browser**
+- **Create a structure with an object and an array that describes the user and their friends.**
 
