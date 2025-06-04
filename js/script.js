@@ -1,18 +1,22 @@
 "use strict";
 
-// get number of hours from user
-const hours= +prompt("Please enter hours");
+// get value from prompt
+const firstValue = +prompt("Please enter first value")
+const secondValue = +prompt("Please enter second value")
+const thirdValue = +prompt("Please enter third value")
 
-// convert hours to minutes
-function convertHourToSeconds(hours) {
-    if (isNaN(hours) || hours <= 0) {
-        alert("Please enter a valid positive number");
+//calculate average number
+function average(firstValue, secondValue, thirdValue){
+    const values = [firstValue, secondValue, thirdValue];
+
+    if (!values.every(Number.isFinite)) {
+        alert("Please enter a valid numbers");
         return;
     }
 
-    const seconds = hours * 3600;
-    alert(`${hours} hour(s) = ${seconds} seconds`);
+    const avg = values.reduce((sum, value) => sum + value, 0) / values.length;
+    alert(`average number is: ${avg}`);
 }
 
-//output data
-convertHourToSeconds(hours)
+//output value
+average(firstValue, secondValue, thirdValue);

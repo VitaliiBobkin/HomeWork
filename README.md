@@ -1,5 +1,5 @@
-# hw-13
-- **convert hours in seconds:**
+# hw-14
+- **create program for calculate average value**
 
    
 
