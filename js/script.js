@@ -1,130 +1,66 @@
 "use strict";
 
-//1 output the numbers from 10 to 20 on a single line separated by commas on the page.
-let result = "";
-for (let i = 10; i <= 20; i++) {
-    result += i + ", ";
-}
-console.log(result);
-
-
-//2 output the squares of numbers from 10 to 20.
-for (let i = 10; i <= 20; i++) {
-    console.log(`${i}² = ${i * i}`);
+// 1 Output the numbers from 20 to 30 through a gap, using a step of 0.5 (20 20.5 21 21.5…)
+for (let i = 20; i <= 30; i += 0.5) {
+    console.log(`numbers using a step of 0.5= ${i}`);
 }
 
-//3 output the squares of numbers from 10 to 20.
-for (let i = 1; i <= 10; i++) {
-    console.log(`7 × ${i} = ${7 * i}`);
+// 2 One dollar costs 27 hryvnias. Output the data with the calculation of the cost of 10, 20, 30... 100 dollars.
+const rate = 27;
+for (let dollar = 10; dollar <= 100; dollar += 10) {
+    const hryvnias = dollar * rate;
+    console.log(`dollar: ${dollar} = hryvna: ${hryvnias}`);
 }
 
-//4 Find the sum of all integers from 1 to 15.
-let sum = 0;
-for (let i = 1; i <= 15; i++) {
-    sum += i;
-}
-console.log(`sum numbers from  1 to 15: ${sum}`);
-
-//5 Find the product of all integers from 15 to 35.
-let sum2 = 1;
-for (let i = 15; i <= 35; i++) {
-    console.log(sum2 *= i);
-}
-
-//6 Find the arithmetic mean of all integers from 1 to 500.
-let sum3 = 0;
-const n = 500;
-for (let i = 1; i <= n; i++) {
-    sum3 += i;
-    const average = sum3 / n;
-    console.log(`arithmetic mean of all integers from 1 to 500: ${average}`);
-}
-
-//7 output the sum of only even numbers in the range from 30 to 80.
-let sum4 = 0;
-for (let i = 30; i <= 80; i++) {
-    if (i % 2 === 0) {
-        console.log(`Sum of even numbers from 30 to 80: ${sum4 += i}`);
-    }
-}
-
-
-//8 output all numbers in the range from 100 to 200 that are multiples of 3.
-for (let i = 100; i <= 200; i++) {
-    if (i % 3 === 0) {
-        console.log(`numbers multiples of 3: ${i}`);
-    }
-}
-
-
-//9 given a natural number, find and output all its divisors.
-function findDivisors(num) {
-    if (num <= 0 || !Number.isInteger(num)) {
-        console.log("Please enter a natural number (positive integer).");
+// 3 given an integer. output all integers from 1 to 100 whose square does not exceed the number N.
+function findNumbersWithSquareLessThanN(N) {
+    if (typeof N !== 'number' || !Number.isInteger(N) || N < 1) {
+        alert("Please enter a valid integer greater than 0.");
         return;
     }
 
-    const divisors = [];
-    for (let i = 1; i <= num; i++) {
-        if (num % i === 0) {
-            divisors.push(i);
+    console.log(`Numbers from 1 to 100 whose square does not exceed ${N}:`);
+    let found = false;
+    for (let i = 1; i <= 100; i++) {
+        if (i * i <= N) {
+            console.log(i);
+            found = true;
         }
     }
 
-    console.log(`Divisors of ${num}: ${divisors.join(", ")}`);
-}
-
-const number = +prompt("Enter a natural number:");
-findDivisors(number);
-
-
-//10 determine the number of its even divisors.
-function countEvenDivisors(num) {
-    if (num <= 0 || !Number.isInteger(num)) {
-        console.log("Please enter a natural number (positive integer).");
-        return;
-    }
-
-    let count = 0;
-    for (let i = 1; i <= num; i++) {
-        if (num % i === 0 && i % 2 === 0) {
-            count++;
-        }
-    }
-
-    console.log(`The number of even divisors of ${num} is: ${count}`);
-}
-
-// Example usage:
-const number2 = +prompt("Enter a natural number:");
-countEvenDivisors(number2);
-
-
-//11 find the sum of its even divisors.
-function sumEvenDivisors(num) {
-    if (num <= 0 || !Number.isInteger(num)) {
-        console.log("Please enter a natural number (positive integer).");
-        return;
-    }
-
-    let sum = 0;
-    for (let i = 1; i <= num; i++) {
-        if (num % i === 0 && i % 2 === 0) {
-            sum += i;
-        }
-    }
-
-    console.log(`The sum of even divisors of ${num} is: ${sum}`);
-}
-
-const number3 = +prompt("Enter a natural number:");
-sumEvenDivisors(number3);
-
-
-//12 output the multiplication table of numbers from 1 to 10.
-for (let i = 1; i <= 10; i++) {
-    console.log(`\n multiplication by ${i}:`);
-    for (let j = 1; j <= 10; j++) {
-        console.log(`${i} × ${j} = ${i * j}`);
+    if (!found) {
+        alert("There are no such numbers.");
     }
 }
+const N = +prompt("enter a number");
+findNumbersWithSquareLessThanN(N)
+
+// 4 find out if it is prime (a prime number is a number greater than 1 that has no other divisors than 1 and itself).
+function isPrime(n) {
+    if (n <= 1) return false;
+    if (n === 2) return true;
+    if (n % 2 === 0) return false;
+
+    for (let i = 3; i <= Math.sqrt(n); i += 2) {
+        if (n % i === 0) return false;
+    }
+
+    return true;
+}
+
+const number = +prompt("Enter an integer:");
+console.log(`${number} is ${isPrime(number) ? "a prime" : "not a prime"} number.`);
+
+//5 given a certain number, determine whether this number can be obtained by raising the number 3 to a certain power.
+// (For example, the numbers 9, 81 can be obtained, but 13 cannot.)
+function isReducingOfNumber(number) {
+    if (number < 1) return false;
+    while (number % 3 === 0) {
+        number /= 3;
+    }
+
+    return number === 1;
+}
+
+const result = +prompt("Enter a number:");
+console.log(`${result} ${isReducingOfNumber(result) ? "can" : "cannot"} be obtained by raising 3 to a power.`);

@@ -1,4 +1,4 @@
-# hw-16
+# hw-17
 
-## Writing loops
+## More complex cycles
 
